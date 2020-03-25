@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 })
 
 export default function App() {
-  const [todoId, setTodoId] = useState('2');
+  const [todoId, setTodoId] = useState(null);
   const [todos, setTodos] = useState([
     {id: '1', title: 'Study React Native'},
     {id: '2', title: 'Create App'}
@@ -50,6 +50,15 @@ export default function App() {
     );
     // setTodos((prev)=>prev.filter(todo=>todo.id!=id))
   }
+  const updateTodo = (id, title) => {
+    setTodos(old=> old.map(todo => {
+      if (todo.id !== id){
+        todo.title = title
+      }
+      return todo
+    })
+    )
+  }
 
   let content = (
     <MainScreen 
@@ -66,6 +75,7 @@ export default function App() {
         goBack={() => setTodoId(null)}
         todo={selectedTodo}
         onRemove={removeTodo}
+        onSave={updateTodo}
       />
     )
   }
