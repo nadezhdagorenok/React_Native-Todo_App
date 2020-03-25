@@ -1,6 +1,16 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import { THEME } from '../theme';
+import { AppTextBold } from './ui/AppTextBold';
+
+
+export const Navbar = (props) => {
+    return (
+        <View style={styles.navbar}>
+            <AppTextBold style={styles.text}>{props.title}</AppTextBold>
+        </View>
+    )
+};
 
 const styles=StyleSheet.create({
     navbar: {
@@ -16,12 +26,3 @@ const styles=StyleSheet.create({
     }
 
 });
-
-export const Navbar = (props) => {
-    return (
-        <View style={styles.navbar}>
-            <Text style={styles.text}>{props.title}</Text>
-        </View>
-    )
-};
-
