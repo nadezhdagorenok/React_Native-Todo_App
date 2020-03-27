@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import {View, StyleSheet, TextInput, Button, Alert} from 'react-native'
+import {View, StyleSheet, TextInput, Button, Alert, Keyboard} from 'react-native'
+import {AntDesign} from '@expo/vector-icons'
 import { THEME } from '../theme';
 
 const styles = StyleSheet.create({
@@ -10,7 +11,7 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
     input: {
-        width: '70%',
+        width: '60%',
         padding: 10,
         borderStyle: 'solid',
         borderBottomWidth: 2,
@@ -27,6 +28,7 @@ export const AddTodo = ({ onSubmit }) => {
         if(value.trim()){
             onSubmit(value);
             setValue('');
+            Keyboard.dismiss();
             return;
         }
         Alert.alert('Error! The deal name can not be empty!!!')
@@ -43,7 +45,8 @@ export const AddTodo = ({ onSubmit }) => {
           autoCapitalize='none'
           keyboardType="number-pad"
           />
-        <Button title={'Add'} onPress={pressHandler} />
+          <AntDesign.Button onPress={pressHandler} name="pluscircleo">Add</AntDesign.Button>
+        {/* <Button title={'Add'} onPress={pressHandler} /> */}
     </View>
     )
 }
