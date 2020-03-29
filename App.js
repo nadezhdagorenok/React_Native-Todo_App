@@ -5,14 +5,12 @@ import {TodoState} from './src/components/context/todo/TodoState'
 import {ScreenState} from './src/components/context/screen/ScreenState'
 import {MainLayout} from './src/MainLayout'
 
-
 async function loadApplication(){
   await Font.loadAsync({
     'roboto-regular': require('./assets/fonts/Roboto-Regular.ttf'),
     'roboto-bold': require('./assets/fonts/Roboto-Bold.ttf'),
   })
 }
-
 
 export default function App() {
   const [isReady, setIsReady] = useState(false)

@@ -4,7 +4,9 @@ import {AppTextBold} from './AppTextBold'
 import { THEME } from '../../theme'
 
 export const AppButton = ({children, onPress, color = THEME.MAIN_COLOR}) => {
+    
     const Wrapper = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity
+
     return (
         <Wrapper onPress={onPress} activeOpacity={0.7}>
             <View style={{...styles.button, backgroundColor: color}}>

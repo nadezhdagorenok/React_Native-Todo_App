@@ -3,24 +3,6 @@ import {View, StyleSheet, TextInput, Alert, Keyboard} from 'react-native'
 import {AntDesign} from '@expo/vector-icons'
 import { THEME } from '../theme';
 
-const styles = StyleSheet.create({
-    block: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 15,
-    },
-    input: {
-        width: '60%',
-        padding: 10,
-        borderStyle: 'solid',
-        borderBottomWidth: 2,
-        borderBottomColor: THEME.MAIN_COLOR
-    },
-  
-
-})
-
 export const AddTodo = ({ onSubmit }) => {
     const [value, setValue] = useState('');
 
@@ -35,7 +17,7 @@ export const AddTodo = ({ onSubmit }) => {
     }
 
     return (
-    <View style={styles.block}>
+      <View style={styles.block}>
         <TextInput 
           style={styles.input} 
           onChangeText={setValue}
@@ -46,7 +28,22 @@ export const AddTodo = ({ onSubmit }) => {
           keyboardType="default"
           />
           <AntDesign.Button onPress={pressHandler} name="pluscircleo">Add</AntDesign.Button>
-        {/* <Button title={'Add'} onPress={pressHandler} /> */}
-    </View>
+      </View>
     )
 }
+
+const styles = StyleSheet.create({
+    block: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: 15,
+    },
+    input: {
+        width: '60%',
+        padding: 10,
+        borderStyle: 'solid',
+        borderBottomWidth: 2,
+        borderBottomColor: THEME.MAIN_COLOR
+    },
+})

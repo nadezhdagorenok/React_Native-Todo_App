@@ -8,7 +8,7 @@ export const Todo = ({todo, onRemove, onOpen}) => {
           activeOpacity={0.5} 
           onPress={()=>onOpen(todo.id)}
           onLongPress={onRemove.bind(null, todo.id)}
-          >
+        >
           <View style={styles.todo}>
             <AppText style={styles.title} >{todo.title}</AppText>
           </View>

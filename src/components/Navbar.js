@@ -24,18 +24,13 @@ const styles=StyleSheet.create({
     },
     navbarAndroid: {
         backgroundColor: THEME.MAIN_COLOR,
-
-
     },
     navbarIos: {
         borderBottomColor: THEME.MAIN_COLOR,
         borderBottomWidth: 1
-
     },
     text: {
         color: Platform.OS==='ios'? THEME.MAIN_COLOR : '#fff',
         fontSize: 20
-
     }
-
 });
