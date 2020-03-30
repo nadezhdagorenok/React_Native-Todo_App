@@ -56,7 +56,7 @@ export const TodoState = ({children}) => {
         showLoader()
         clearError()
         try {
-            const data = await request.get('https://react-native-todo-app-dcd65.firebaseio.com/todos.json')
+            const data = await Http.get('https://react-native-todo-app-dcd65.firebaseio.com/todos.json')
             const todos = Object.keys(data).map(key => ({...data[key], id: key}))
             dispatch({type: FETCH_TODOS, todos})
         } catch(e){
